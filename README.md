@@ -6,7 +6,7 @@ Dienstensysteem v2
 
 ### With Docker
 
-1. Build and run the development Docker image using [Docker Compose](https://docs.docker.com/compose/install/): `docker-compose up` and go to http://localhost:8000
+1. Build and run the development Docker image using [Docker Compose](https://docs.docker.com/compose/install/): `docker-compose up` and go to http://localhost:8000 and set OIDC_LDAP_ADMIN_GROUP in the dev.env to your current committee to allow access.
 
 ### Without Docker
 
