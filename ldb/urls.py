@@ -14,12 +14,13 @@ from ldb.views import (
     ResultsView,
     CommitteeMembershipFilterView,
     IndexView,
+    UpdateMailView,
 )
 
 router = routers.DefaultRouter()
 router.register(r"people", viewsets.PersonViewSet)
 router.register(r"organizations", viewsets.OrganizationsViewSet)
-router.register(r"updatemail", viewsets.PersonViewSet)
+router.register(r"updatemail", viewsets.UpdateMailView)
 
 urlpatterns = [
     path("api/v3/", include(router.urls)),
@@ -54,5 +55,5 @@ urlpatterns = [
     ),
     path("committees/", CommitteeMembershipFilterView.as_view(), name="ldb_committees"),
     path("export/", export.Export.as_view(), name="ldb_export"),
-    path("updatemail/", PersonDetailView.as_view(), name="ldb_update_mail"),
+    path("updatemail/", UpdateMailView.as_view(), name="ldb_update_mail"),
 ]
